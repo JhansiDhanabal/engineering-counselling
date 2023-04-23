@@ -5,6 +5,28 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <style>
+            body{
+                background-color: #ff99cc
+            }
+            a{
+                text-decoration: none;
+                color: #000000;
+            }
+            td{
+                background-color: #ccffcc;
+                border: 2px solid black;
+                padding:15px;
+            }
+            .box{
+                margin-top: 7%;
+                background-color: #0066ff;
+                border: 2px solid black;
+                padding:20px;
+                margin-left: 25%;
+                margin-right: 25%;
+            }
+        </style>
     </head>
     <body>
         <%
@@ -17,6 +39,7 @@
             double chemistry=Double.parseDouble(request.getParameter("che"));
             double physics=Double.parseDouble(request.getParameter("phy"));
             double cutoff=maths+chemistry/2+physics/2;
+            String com=request.getParameter("com");
             Connection c=DriverManager.getConnection("jdbc:derby://localhost:1527/miniproject");
             Statement st=c.createStatement();
             boolean flag=true;
@@ -29,10 +52,28 @@
                     }
                 }
                 if(flag){
-                st.executeUpdate("insert into student_info values('"+name+"','"+m+"',"+cutoff+","+mark+",'"+date+"')");
+                st.executeUpdate("insert into student_info values('"+name+"','"+m+"',"+cutoff+","+mark+",'"+date+"','"+com+"')");
                 }
             }
-            out.println("<a href='valid.jsp?user="+name+"&mail="+m+"&pass=123'> confirm </button>");
         %>
+    <center>
+        <div class="box">
+            <h3>CONFIRMATION PAGE FOR APPLICATION FORM</h3>
+            <p>THANK YOU FOR SUBMITTING THIS FORM</p>
+            <p>WE HAVE SUCCESSFULLY RECEIVED IT</p>
+            <P>BELOW IS A SUMMARY OF THE INFORMATION YOU PROVIDED.</P>
+            <table><tr><td>
+            <%
+                out.println("NAME : "+name+"<br><br>");
+                out.println("EMAIL : "+m+"<br><br>");
+                out.println("DOB : "+date+"<br><br>");
+                out.println("COMMUNITY : "+com+"<br><br>");
+                out.println("AGGREGATE MARK : "+cutoff+"<br><br>");
+                out.println("</td></tr></table>");
+                out.println("<br><a href='valid.jsp?user="+name+"&mail="+m+"&pass=123'><center><b> CONFIRM</b> </center></button>");
+            %>      
+        </div>
+    </center>
+        
     </body>
 </html>

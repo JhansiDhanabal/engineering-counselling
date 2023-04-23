@@ -15,12 +15,17 @@
     margin: 0px;
     padding: 0px;
     }
-
+    body{
+        background-image: url('IMG-20230418-WA0001.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size:cover;
+    }
     .header
     {
 
     background-color: skyblue;
-    line-height: 70px;
+    line-height: 30px;
     padding-left: 30px;
     }
 
@@ -69,14 +74,19 @@
     margin-left: 20%;
     margin-top: 5%;
     }
-
+    img{
+        height: 45%;
+        width: 45%;
+    }
             </style>
 
         </head>
         <body>
 
     <header class="header">
-    <a href="">Dashboard</a>
+    <center><h3>TAMIL NADU ENGINEERING COUNSELLING-2023</h3>
+                <h4>B.E/B.Tech ONLINE REGISTRATION</h4>
+    </center>
     </header>
             <%
             String n=request.getParameter("user");
@@ -103,6 +113,7 @@
     %>
 
     <div class="content">
+        <center> 
     <%
         if(flag){
                 st.executeUpdate("insert into student values('"+n+"','"+m+"','"+p+"')");
@@ -112,6 +123,8 @@
                 out.println("<h1>WELCOME TO ENGINEERING COUNSELLING "+n.toUpperCase()+"<br></h1>");
             }
     %>
+    <br><br><img src="Screenshot (7).png">
+       </center>
     </div>
     </body>
 </html>

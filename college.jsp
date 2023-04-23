@@ -5,14 +5,41 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <style>
+            body{
+                background-color: #ff99cc;
+            }
+            .college{
+                background-color: #33ccff;
+                border: 2px solid black;
+                padding: 2px;
+                
+            }
+            .course{
+                background-color: #ccffcc;
+                border:2px  #cccccc;
+                padding:2px;
+            }
+            .head{
+                margin-top: 0;
+                background-color: #0066ff;
+
+            }
+        </style>
     </head>
     <body>
+        <div class="head">
+            <center><h3>TAMIL NADU ENGINEERING COUNSELLING-2023</h3>
+                <h3>(TNEA)</h3>
+                <h3>B.E/B.Tech ONLINE REGISTRATION</h3>
+            </center>
+        </div>
         <% 
             String n=request.getParameter("student");
             String m=request.getParameter("mail");
         
         out.println("<form action='choose.jsp?student="+n+"&mail="+m+"' method='post'>");
-        out.println("<table>");
+        out.println("<center><table>");
         
             String cname;int cse;int it;int ece;int eee;int mech;int civil;int ccode;
             Connection c=DriverManager.getConnection("jdbc:derby://localhost:1527/miniproject");
@@ -59,7 +86,7 @@
         <%      
             out.println("</td></tr>");
             }
-            out.println("<tr><td><center><input type='submit'><center></td></tr></table></form>");
+            out.println("<tr><td><center><input type='submit'></center></td></tr></table></center></form>");
         %>
         
     </body>

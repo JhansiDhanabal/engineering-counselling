@@ -6,14 +6,30 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
         <style>
+            body{
+                background-color: #ff99cc
+            } 
             table,td,th{
                 color: blue;
                 border:1px solid black;
                 border-collapse: collapse;
+                background-color: #ccffcc;
+                text-align: center;
+                padding:3px;
+            }
+            .head{
+                margin-top: 0;
+                background-color: #0066ff;
             }
         </style>
     </head>
     <body>
+        <div class="head">
+            <center><h3>TAMIL NADU ENGINEERING COUNSELLING-2023</h3>
+                <h3>(TNEA)</h3>
+                <h3>B.E/B.Tech ONLINE REGISTRATION</h3>
+            </center>
+        </div>
         <%
             Connection c1=DriverManager.getConnection("jdbc:derby://localhost:1527/miniproject");
             Statement st1=c1.createStatement();
@@ -86,16 +102,16 @@
             Connection c6=DriverManager.getConnection("jdbc:derby://localhost:1527/miniproject");
             Statement st6=c6.createStatement();
             ResultSet rs6=st6.executeQuery("select * from allocation");
-            out.println("<table><tr><th>student name</th><th>mail</th><th>college name</th><th>course name</th><th>status</th></tr>");
+            out.println("<center><h3>ALLOCATIION TABLE</h3><table><tr><th>student name</th><th>mail</th><th>college name</th><th>course name</th><th>status</th></tr>");
             while(rs6.next()){
                 String name=rs6.getString("studentname");
                 String mail=rs6.getString("mail");
                 String collegename=rs6.getString("collegename");
                 String course=rs6.getString("coursename");
                 String status=rs6.getString("status");
-                out.println("<tr><td>"+name+"</td><td>"+mail+"</td><td>"+collegename+"</td><td>"+course+"</td><td>"+status+"</td></tr>");
+                out.println("<tr><td style='text-align:left;'>"+name+"</td><td style='text-align:left;'>"+mail+"</td><td>"+collegename+"</td><td>"+course+"</td><td>"+status+"</td></tr>");
             }
-             out.println("</table>");
+             out.println("</table></center>");
         %>
     </body>
 </html>
