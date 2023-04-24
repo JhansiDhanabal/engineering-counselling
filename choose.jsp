@@ -9,14 +9,17 @@
         <title>JSP Page</title>
         <style>
             body{
-                background-color: #ff99cc;
+                background-image: url('IMG-20230418-WA0001.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size:cover;
             }
             .box{
                 border: 2px solid black;
                 padding:2px;
                 margin-left: 28%;
                 margin-right:28%;
-                background-color: #ccffcc;
+                background-color: skyblue;
             }
             .head{
                 margin-top: 0;
@@ -31,12 +34,7 @@
     </head>
     <body>
         <center>
-        <div class="head">
-            <h3>TAMIL NADU ENGINEERING COUNSELLING-2023</h3>
-                <h3>(TNEA)</h3>
-                <h3>B.E/B.Tech ONLINE REGISTRATION</h3>
-            
-        </div>
+        
         <h3>CONFIRMATION PAGE FOR CHOICE FILLING</h3>
         </center>
         <%
@@ -72,8 +70,7 @@
             }
             if(flag){
             st.executeUpdate("insert into choice values('"+n+"','"+m+"','"+str+"')");}
-            out.println("</div><br><a href='valid.jsp?user="+n+"&mail="+m+"&pass=123'><center><b> CONFIRM</b> </center></button>");
-           
+            
         %>
         
     </body>

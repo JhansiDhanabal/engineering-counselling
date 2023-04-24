@@ -1,8 +1,3 @@
-<%-- 
-    Document   : valid
-    Created on : Apr 14, 2023, 10:07:34 AM
-    Author     : USER
---%>
 
 <%@page import="java.sql.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -29,7 +24,7 @@
     padding-left: 30px;
     }
 
-    a,a:hover
+    button,button:hover
     {
     text-decoration: none!important;
     }
@@ -62,14 +57,17 @@
     color: white;
     font-weight: bold;
     }
-
-    ul li a:hover
+    button{
+        background-color: #424a5b;
+        color:white;
+    }
+    ul li button
     {
     color: skyblue;
     text-decoration: none;
     }
 
-    .content
+    #content
     {
     margin-left: 20%;
     margin-top: 5%;
@@ -77,6 +75,11 @@
     img{
         height: 45%;
         width: 45%;
+    }
+    iframe{
+        
+        height:700px;
+        width: 1000px;
     }
             </style>
 
@@ -92,7 +95,7 @@
             String n=request.getParameter("user");
             String m=request.getParameter("mail");
             String p=request.getParameter("pass");
-            out.println("<aside><ul><li><a href='register.jsp?student="+n+"&mail="+m+"'>APPLICATION FORM</a></li><li><a href='ranklist.jsp'>RANKLIST</a><li><a href='college.jsp?student="+n+"&mail="+m+"'>CHOICES</a></li><li><a href='allocated.jsp'>SEAT ALLOTMENT</a></li></ul></aside>");
+            out.println("<aside><ul><li><button onclick=display('register.jsp?student="+n+"&mail="+m+"')>APPLICATION FORM</button></li><li><button onclick=display('ranklist.jsp')>RANKLIST</button><li><button onclick=display('college.jsp?student="+n+"&mail="+m+"')>CHOICES</button></li><li><button onclick=display('allocated.jsp')>SEAT ALLOTMENT</button></li></ul></aside>");
             String pass;
             Connection c=DriverManager.getConnection("jdbc:derby://localhost:1527/miniproject");
             Statement st=c.createStatement();
@@ -112,8 +115,8 @@
             }
     %>
 
-    <div class="content">
-        <center> 
+    <div id="content">
+    <center> 
     <%
         if(flag){
                 st.executeUpdate("insert into student values('"+n+"','"+m+"','"+p+"')");
@@ -124,7 +127,13 @@
             }
     %>
     <br><br><img src="Screenshot (7).png">
-       </center>
+    </center>
     </div>
+    <script>
+            function display(src1){
+                document.getElementById("content").innerHTML="<iframe src="+src1+"></iframe>";
+            }
+            
+        </script>
     </body>
 </html>

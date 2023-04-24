@@ -6,11 +6,13 @@
         <title>JSP Page</title>
         <style>
             body{
-                background-color: #ff99cc
+                background-image: url('IMG-20230418-WA0001.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size:cover;
             }  
             table{
-                background-color: #ccffcc;
-                color: blue;
+                background-color: skyblue;
                 border:1px solid black;
                 padding:2px;
             }
@@ -21,12 +23,6 @@
         </style>
     </head>
     <body>
-        <div class="head">
-            <center><h3>TAMIL NADU ENGINEERING COUNSELLING-2023</h3>
-                <h3>(TNEA)</h3>
-                <h3>B.E/B.Tech ONLINE REGISTRATION</h3>
-            </center>
-        </div>
         <center>
         <h4>STUDENT DETAILS</h4>
         <%

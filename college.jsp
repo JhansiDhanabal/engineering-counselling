@@ -7,16 +7,21 @@
         <title>JSP Page</title>
         <style>
             body{
-                background-color: #ff99cc;
+               background-image: url('IMG-20230418-WA0001.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size:cover;
             }
             .college{
-                background-color: #33ccff;
+                background-color: #424a5b;
+                color:white;
                 border: 2px solid black;
                 padding: 2px;
                 
             }
             .course{
-                background-color: #ccffcc;
+                color:black;
+                background-color: skyblue;
                 border:2px  #cccccc;
                 padding:2px;
             }
@@ -28,12 +33,7 @@
         </style>
     </head>
     <body>
-        <div class="head">
-            <center><h3>TAMIL NADU ENGINEERING COUNSELLING-2023</h3>
-                <h3>(TNEA)</h3>
-                <h3>B.E/B.Tech ONLINE REGISTRATION</h3>
-            </center>
-        </div>
+    <center><h3>CHOICE FILLING</h3></center>
         <% 
             String n=request.getParameter("student");
             String m=request.getParameter("mail");

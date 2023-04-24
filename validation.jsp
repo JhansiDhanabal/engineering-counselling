@@ -7,14 +7,17 @@
         <title>JSP Page</title>
         <style>
             body{
-                background-color: #ff99cc
+                background-image: url('IMG-20230418-WA0001.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size:cover;
             }
             a{
                 text-decoration: none;
                 color: #000000;
             }
             td{
-                background-color: #ccffcc;
+                background-color: skyblue;
                 border: 2px solid black;
                 padding:15px;
             }
@@ -70,7 +73,6 @@
                 out.println("COMMUNITY : "+com+"<br><br>");
                 out.println("AGGREGATE MARK : "+cutoff+"<br><br>");
                 out.println("</td></tr></table>");
-                out.println("<br><a href='valid.jsp?user="+name+"&mail="+m+"&pass=123'><center><b> CONFIRM</b> </center></button>");
             %>      
         </div>
     </center>

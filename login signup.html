@@ -130,9 +130,10 @@
             }
             .container
             {
+              
                 width:100%;
                 min-height: 100vh;
-                background-image:linear-gradient(#ccffff,rgba(9,0,77,0.65)),url('back.png');
+                background-image:linear-gradient(#000066,rgba(9,0,77,0.65)),url('welcomepic.jpg');
                 background-size: cover;
                 background-position: center;
                 padding: 20px 8%;             
@@ -150,6 +151,7 @@
             }
            
             nav ul{
+                color:white;
                 list-style: none;
                 width:100%;
                 text-align:right;
@@ -173,7 +175,7 @@
                 border:0;
                 outline:0;
                 border-radius: 7px;
-                background:#f5168d;
+                background:#ccffff;
                 color: black;
                 cursor:pointer;
                 margin-left: 5px;
@@ -209,7 +211,10 @@
                 padding:10px 30px;
             }
              body{
-                background-color: #ffccff;
+                background-image: url('IMG-20230418-WA0001.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size:cover;
                 font-size: 14px;
             }
             .containers{
@@ -314,14 +319,14 @@
                 <form action="valid.jsp" method="post" id="login" class="inputgroup">
                     <input type="email" name="mail" class="infield" placeholder="Email ID" required>
                     <input type="password" name="pass" class="infield" placeholder="Enter password" required>
-                    <input type="checkbox" class="cbox"><span> Remember password</span>
+                    <input type="checkbox" class="cbox"><br><span> Remember password</span>
                     <input type="submit" class="submitbtn" >
                 </form>
                 <form action="valid.jsp" method="post" id="signup" class="inputgroup">
                     <input type="text" class="infield" placeholder="User Name" name="user" required>
                     <input type="email" class="infield" placeholder="Email ID" name="mail" required>
                     <input type="password" class="infield" placeholder="Enter password" name="pass" required>
-                    <input type="checkbox" class="cbox"><span> I agree to the terms & condition</span>
+                    <input type="checkbox" class="cbox"><br><span> I agree to the terms & condition</span>
                     <input type="submit" class="submitbtn" >
                 </form>
             </div>
@@ -344,18 +349,18 @@
         </script>
         </div>
         </div>
-        <div class="container">
+        <div class="container" style="color:white;">
             <nav>
-                <img src='education.png' class="logo"><h1 id="1">  ENGINEERING  ADMISSIONS </h1>
-                <ul>
+                <img src='Screenshot (6).png' class="logo"><h1 id="1">  ENGINEERING  ADMISSIONS </h1>
+                <ul >
                  
-                    <li><a href='login signup.html'> HOME </a></li>
-                    <li><a href='#contact'>CONTACT US</a></li>
+                    <li><a style="color:white" href='login signup.html'> HOME </a></li>
+                    <li><a style="color:white" href='#contact'>CONTACT US</a></li>
                 </ul>
                 <button class="btn" onclick="myfunction()">LOGIN</button>
                 <button class="btn" onclick="myfunction()">SIGNUP</button>
             </nav>
-            <div class="content">
+            <div class="content" style="color:white;">
                
                 <br><br><br> <p>Engineering Admissions 2022 (EA 2022) is a complete online process includes Registration, Payments, Choice Filling, Allotment and Confirmation. Candidates are requested to read the instructions given here completely for the successful completion of their Counseling and Admissions.</p>
                 <br> 

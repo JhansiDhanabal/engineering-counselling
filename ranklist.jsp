@@ -9,15 +9,17 @@
         <title>JSP Page</title>
         <style>
             body{
-                background-color: #ff99cc
+                background-image: url('IMG-20230418-WA0001.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size:cover;
             }
             table,td,th{
-                color: blue;
                 border:1px solid black;
                 border-collapse: collapse;
                 padding: 3px;
                 text-align: center;
-                background-color: #ccffcc;
+                background-color: skyblue;
             }
         </style>
     </head>
@@ -64,7 +66,7 @@
             }
             ResultSet rs1=st.executeQuery("select * from ranklist");
             int index=1;
-            out.println("<center><h3>TAMILNADU ENGINEERING ADMISSION-2023</h3><h3>DIRECTORATE OF TECHNICAL EDUCATION, CHENNAI-25</h3><h3>GENERAL ACADEMIC-PROVISIONAL RANK LIST</h3><br><table><tr><th>RANK</th><th>NAME OF THE CANDIDATE</th><th>DATE OF BIRTH</th><th>AGGREGATE MARK</th><th>COMMUNITY</th></tr>");
+            out.println("<center><h3>GENERAL ACADEMIC-PROVISIONAL RANK LIST</h3><br><table><tr><th>RANK</th><th>NAME OF THE CANDIDATE</th><th>DATE OF BIRTH</th><th>AGGREGATE MARK</th><th>COMMUNITY</th></tr>");
             while(rs1.next()){
                 double cut=rs1.getDouble("cutoff");
                 String n=rs1.getString("studentname");

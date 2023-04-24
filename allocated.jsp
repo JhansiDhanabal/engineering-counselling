@@ -7,13 +7,15 @@
         <title>JSP Page</title>
         <style>
             body{
-                background-color: #ff99cc
+                background-image: url('IMG-20230418-WA0001.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size:cover;
             } 
             table,td,th{
-                color: blue;
                 border:1px solid black;
                 border-collapse: collapse;
-                background-color: #ccffcc;
+                background-color: skyblue;
                 text-align: center;
                 padding:3px;
             }
@@ -24,12 +26,7 @@
         </style>
     </head>
     <body>
-        <div class="head">
-            <center><h3>TAMIL NADU ENGINEERING COUNSELLING-2023</h3>
-                <h3>(TNEA)</h3>
-                <h3>B.E/B.Tech ONLINE REGISTRATION</h3>
-            </center>
-        </div>
+        
         <%
             Connection c1=DriverManager.getConnection("jdbc:derby://localhost:1527/miniproject");
             Statement st1=c1.createStatement();
