@@ -11,7 +11,7 @@
     padding: 0px;
     }
     body{
-        background-image: url('IMG-20230418-WA0001.jpg');
+    /*    background-image: url('IMG-20230418-WA0001.jpg');*/
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-size:cover;
@@ -19,7 +19,7 @@
     .header
     {
 
-    background-color: skyblue;
+        background-color: #71b9e9;
     line-height: 30px;
     padding-left: 30px;
     }
@@ -37,7 +37,7 @@
 
     ul
     {
-    background-color: #424a5b;
+    background-color: #01010c;
     width: 16%;
     height: 100%;
     position: fixed;
@@ -58,12 +58,12 @@
     font-weight: bold;
     }
     button{
-        background-color: #424a5b;
+        background-color: #01010c;
         color:white;
     }
     ul li button
     {
-    color: skyblue;
+    color: white;
     text-decoration: none;
     }
 
@@ -87,7 +87,7 @@
         <body>
 
     <header class="header">
-    <center><h3>TAMIL NADU ENGINEERING COUNSELLING-2023</h3>
+    <center><h3> ENGINEERING COUNSELLING-2023</h3>
                 <h4>B.E/B.Tech ONLINE REGISTRATION</h4>
     </center>
     </header>
@@ -95,7 +95,7 @@
             String n=request.getParameter("user");
             String m=request.getParameter("mail");
             String p=request.getParameter("pass");
-            out.println("<aside><ul><li><button onclick=display('register.jsp?student="+n+"&mail="+m+"')>APPLICATION FORM</button></li><li><button onclick=display('ranklist.jsp')>RANKLIST</button><li><button onclick=display('college.jsp?student="+n+"&mail="+m+"')>CHOICES</button></li><li><button onclick=display('allocated.jsp')>SEAT ALLOTMENT</button></li></ul></aside>");
+            out.println("<aside><ul><li><button onclick=display('register.jsp?student="+n+"&mail="+m+"')>APPLICATION FORM</button></li><li><button onclick=display('ranklist.jsp')>RANKLIST</button><li><button onclick=display('college.jsp?student="+n+"&mail="+m+"')>CHOICES</button></li><li><button onclick=display('allocated.jsp')>AVAILABLE SEATS</button></li></ul></aside>");
             String pass;
             Connection c=DriverManager.getConnection("jdbc:derby://localhost:1527/miniproject");
             Statement st=c.createStatement();

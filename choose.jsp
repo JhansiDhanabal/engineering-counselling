@@ -9,7 +9,7 @@
         <title>JSP Page</title>
         <style>
             body{
-                background-image: url('IMG-20230418-WA0001.jpg');
+        /*        background-image: url('IMG-20230418-WA0001.jpg');*/
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-size:cover;
@@ -59,7 +59,6 @@
             }
             Connection c=DriverManager.getConnection("jdbc:derby://localhost:1527/miniproject");
             Statement st=c.createStatement();
-            st.executeUpdate("truncate table choice");
             boolean flag=true;
             ResultSet rs=st.executeQuery("select * from choice");
             while(rs.next()){

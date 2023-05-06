@@ -9,7 +9,7 @@
         <title>JSP Page</title>
         <style>
             body{
-                background-image: url('IMG-20230418-WA0001.jpg');
+        /*        background-image: url('IMG-20230418-WA0001.jpg');*/
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-size:cover;
@@ -19,7 +19,7 @@
                 border-collapse: collapse;
                 padding: 3px;
                 text-align: center;
-                background-color: skyblue;
+                text-transform: uppercase;
             }
         </style>
     </head>
@@ -64,16 +64,30 @@
                 if(flag){
                 st.executeUpdate("insert into ranklist values('"+m+"',"+cut+",'"+na+"','"+dateofbirth+"','"+community+"')");   }
             }
-            ResultSet rs1=st.executeQuery("select * from ranklist");
+            ResultSet rs4=st.executeQuery("select count(mail) as c1,community from ranklist group by community");
             int index=1;
-            out.println("<center><h3>GENERAL ACADEMIC-PROVISIONAL RANK LIST</h3><br><table><tr><th>RANK</th><th>NAME OF THE CANDIDATE</th><th>DATE OF BIRTH</th><th>AGGREGATE MARK</th><th>COMMUNITY</th></tr>");
+            Hashtable <String,String>arr1=new Hashtable<String,String>();
+            while(rs4.next()){
+                int c1=rs4.getInt("c1");
+                String com1=rs4.getString("community");
+                arr1.put(com1,String.valueOf(c1)+String.valueOf(c1));
+            }
+            ResultSet rs1=st.executeQuery("select * from ranklist");
+            out.println("<center><h3>GENERAL ACADEMIC-PROVISIONAL RANK LIST</h3><br><table><tr><th>RANK</th><th>NAME OF THE CANDIDATE</th><th>DATE OF BIRTH</th><th>AGGREGATE MARK</th><th>COMMUNITY</th><th>COMMUNITY RANK</th></tr>");
             while(rs1.next()){
                 double cut=rs1.getDouble("cutoff");
                 String n=rs1.getString("studentname");
                 String dob=rs1.getString("dob");
                 String com=rs1.getString("community");
-                out.println("<tr><td>"+index+"</td><td style='text-align:left;'>"+n+"</td><td>"+dob+"</td><td>"+cut+"</td><td>"+com+"</td></tr>");
+                String rank=arr1.get(com);
+                int len=rank.length()/2;
+                int ori=Integer.parseInt(rank.substring(0,len));
+                int r=Integer.parseInt(rank.substring(len));
+                out.println("<tr><td>"+index+"</td><td style='text-align:left;'>"+n+"</td><td>"+dob+"</td><td>"+cut+"</td><td>"+com+"</td><td>"+(r-ori+1)+"</td></tr>");
                 index++;
+                r++;
+                arr1.replace(com, String.valueOf(ori)+String.valueOf(r));
+            
             }
              out.println("</table></center>");
         %>

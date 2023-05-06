@@ -7,21 +7,21 @@
         <title>JSP Page</title>
         <style>
             body{
-               background-image: url('IMG-20230418-WA0001.jpg');
+               /*background-image: url('IMG-20230418-WA0001.jpg');*/
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-size:cover;
             }
             .college{
-                background-color: #424a5b;
+                background-color: #01010c;
                 color:white;
                 border: 2px solid black;
                 padding: 2px;
-                
+                text-transform: capitalize;
             }
             .course{
                 color:black;
-                background-color: skyblue;
+                background-color: #ade0f0;
                 border:2px  #cccccc;
                 padding:2px;
             }
